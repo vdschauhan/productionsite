@@ -1,1 +1,183 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <title>First United Bank - Example</title>
+
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #f4f4f8; color: #222; }
+    header { background: #0460a9; color: #fff; padding: 20px 0; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    .logo { font-size: 2rem; font-weight: bold; }
+    nav { margin-top: 10px; }
+    nav a { color: #fff; margin-right: 28px; text-decoration: none; font-weight: 500; }
+    nav a:last-child { margin-right: 0; }
+    .hero { background: #c5e2f6; padding: 50px 0 40px 0; text-align: center; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 16px; }
+    .hero p { font-size: 1.3rem; }
+    .section { padding: 40px 0; text-align: center; }
+    .highlights { display: flex; justify-content: space-between; gap: 30px; }
+    .highlight {
+      background: #fff;
+      border-radius: 8px;
+      padding: 32px 22px;
+      flex: 1;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+    }
+    .highlight h3 { color: #0460a9; margin-bottom: 12px; }
+    footer { background: #0460a9; color: #fff; padding: 38px 0 30px 0; margin-top: 60px; }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .footer-links { margin-bottom: 12px; }
+    .footer-links a {
+      color: #fff;
+      margin-right: 25px;
+      text-decoration: none;
+      font-size: 1.08rem;
+    }
+    .footer-links a:last-child { margin-right: 0; }
+    .footer-logo { font-size: 1.6rem; font-weight: 600; }
+    .footer-info { font-size: 0.98rem; margin-bottom: 12px; }
+
+    @media(max-width: 800px) {
+      .highlights { flex-direction: column; gap: 20px; }
+      .footer-content { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo">First United Bank</div>
+    <nav>
+      <a href="#">Personal</a>
+      <a href="#">Business</a>
+      <a href="#">Locations</a>
+      <a href="#">About</a>
+      <a href="#">Login</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Your Community Bank</h1>
+    <p>Serving West Texas for over 100 years with integrity, loyalty, and a strong community spirit.</p>
+    <button style="margin-top:26px; background:#0460a9; color:white; font-size:1.15rem; padding:14px 32px; border:none; border-radius:5px; cursor:pointer;">
+      Open an Account
+    </button>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="highlights">
+      <div class="highlight">
+        <h3>Personal Banking</h3>
+        <p>Checking, savings, and digital solutions for your everyday life.</p>
+      </div>
+      <div class="highlight">
+        <h3>Business Solutions</h3>
+        <p>Loans, cash management, and dedicated support for local businesses.</p>
+      </div>
+      <div class="highlight">
+        <h3>Spirit of West Texas</h3>
+        <p>A tradition of generosity, loyalty, and community for over a century.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div>
+        <div class="footer-logo">First United Bank</div>
+        <div class="footer-info">
+          © 2025 First United Bank. Member FDIC. Equal Housing Lender.<br>
+          123 Main Street, West Texas, USA<br>
+          <a href="#" style="color:#c5e2f6;">Privacy Policy</a> |
+          <a href="#" style="color:#c5e2f6;">Terms of Use</a>
+        </div>
+        <div class="footer-links">
+          <a href="#">Personal</a>
+          <a href="#">Business</a>
+          <a href="#">Careers</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- =========================
+     Salesforce Embedded Service (Live Agent)
+     Place before closing body tag
+========================= -->
+
+<style type="text/css">
+  .embeddedServiceHelpButton .helpButton .uiButton {
+    background-color: #005290;
+    font-family: Arial, sans-serif;
+  }
+  .embeddedServiceHelpButton .helpButton .uiButton:focus {
+    outline: 1px solid #005290;
+  }
+</style>
+
+<script type="text/javascript" src="https://service.force.com/embeddedservice/5.0/esw.min.js"></script>
+
+<script type="text/javascript">
+  var initESW = function (gslbBaseURL) {
+    embedded_svc.settings.displayHelpButton = true;
+    embedded_svc.settings.language = "en-US";
+
+    embedded_svc.settings.storageDomain = window.location.hostname;
+
+    embedded_svc.settings.enabledFeatures = ["LiveAgent"];
+    embedded_svc.settings.entryFeature = "LiveAgent";
+
+    embedded_svc.init(
+      "https://firstunitedbank.my.salesforce.com",
+      "https://firstunitedbank.my.salesforce-sites.com/liveAgentSetupFlow",
+      gslbBaseURL,
+      "00D6g000003tgem",
+      "Customer_Care_Chat_Users",
+      {
+        baseLiveAgentContentURL:
+          "https://c.la13-core1.sfdc-8tgtt5.salesforceliveagent.com/content",
+        deploymentId: "5726g0000005fSP",
+        buttonId: "5736g0000005h5j",
+        baseLiveAgentURL:
+          "https://d.la13-core1.sfdc-8tgtt5.salesforceliveagent.com/chat",
+        eswLiveAgentDevName: "Customer_Care_Chat_Users",
+        isOfflineSupportEnabled: true
+      }
+    );
+  };
+
+  if (!window.embedded_svc) {
+    var s = document.createElement("script");
+    s.setAttribute(
+      "src",
+      "https://firstunitedbank.my.salesforce.com/embeddedservice/5.0/esw.min.js"
+    );
+    s.onload = function () {
+      initESW(null);
+    };
+    document.body.appendChild(s);
+  } else {
+    initESW("https://service.force.com");
+  }
+</script>
+
+</body>
+</html>
